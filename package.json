@@ -2,8 +2,9 @@
   "name": "expocr_transaction",
   "version": "1.0.0",
   "description": "",
-  "main": "cvapi.js",
+  "main": "api.js",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
