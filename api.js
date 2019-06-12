@@ -50,7 +50,7 @@ function mockProcessRequest () {
  * json format
  *
  * @param res - result from processRequest microsoft API
- * @return readable json format
+ * @return {array}
  */
 function parseResponse (res) {
   const boxes = [];
@@ -120,7 +120,8 @@ function parseResponse (res) {
     //   resultArr.push({line, price: price[0]});
     // }
   }
-  console.log(results);
+  // console.log(results);
+  return results;
 }
 
 
@@ -132,15 +133,18 @@ const image2 = 'https://i.imgur.com/VH4PDCq.jpg';
 const image3 = 'https://i.imgur.com/ZkSLNYl.jpg';
 const hrstart = process.hrtime();
 // mockProcessRequest()
-processRequest({url: image2})
-  .then(res => {
-    // console.log(res);
-    // res = JSON.parse(res);
-    // fs.writeFileSync('image1.json', JSON.stringify(res));
-    parseResponse(res);
-    const hrend = process.hrtime(hrstart);
-    console.info(`Execution time: ${hrend[1]/1000000}ms`);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+
+module.exports = {processRequest, parseResponse};
+
+// processRequest({url: image2})
+//   .then(res => {
+//     // console.log(res);
+//     // res = JSON.parse(res);
+//     // fs.writeFileSync('image1.json', JSON.stringify(res));
+//     parseResponse(res);
+//     const hrend = process.hrtime(hrstart);
+//     console.info(`Execution time: ${hrend[1]/1000000}ms`);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
