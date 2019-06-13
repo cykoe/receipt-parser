@@ -1,6 +1,6 @@
 const AWS = require('aws-sdk');
 
-const ddb = new AWs.DynamoDB.DocumentClient();
+const ddb = new AWS.DynamoDB.DocumentClient();
 
 const Api = require('./api');
 /**
